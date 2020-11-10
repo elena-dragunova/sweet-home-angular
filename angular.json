@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "sweet-home-angular"
+    }
+  },
+  "defaultProject": "sweet-home-angular",
+  "cli": {
+    "analytics": false
+  }
 }
