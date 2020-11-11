@@ -8,6 +8,11 @@ import { CatalogComponent } from './catalog/catalog.component';
 import { BlogComponent } from './blog/blog.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { CartComponent } from './cart/cart.component';
+import { HeaderComponent } from './header/header.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BadgeComponent } from './components/badge/badge.component';
+import { SocialIconsComponent } from './components/social-icons/social-icons.component';
+import { LogoComponent } from './components/logo/logo.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +21,16 @@ import { CartComponent } from './cart/cart.component';
     CatalogComponent,
     BlogComponent,
     ContactsComponent,
-    CartComponent
+    CartComponent,
+    HeaderComponent,
+    BadgeComponent,
+    SocialIconsComponent,
+    LogoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

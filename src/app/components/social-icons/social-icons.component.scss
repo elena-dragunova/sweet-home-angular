@@ -1,0 +1,32 @@
+@import '../../../vars';
+
+.social {
+  a {
+    display: inline-block;
+    margin: 0 6px;
+
+    fa-icon {
+      font-size: 20px;
+    }
+  }
+
+  &.grey {
+    fa-icon {
+      color: #828282;
+    }
+  }
+
+  &.white {
+    fa-icon {
+      color: $white-color;
+    }
+  }
+
+  a:hover,
+  a:focus,
+  a:active {
+    fa-icon {
+      color: $gold-color;
+    }
+  }
+}

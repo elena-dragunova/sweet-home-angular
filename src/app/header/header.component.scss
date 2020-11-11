@@ -1,0 +1,130 @@
+@import "../../vars";
+
+.header {
+  width: 100%;
+  z-index: 100;
+
+  .top {
+    display: flex;
+    background-color: $steel-color;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .top > *,
+  .bottom > *{
+    width: 33.33%;
+  }
+}
+
+.contacts {
+
+  span {
+    padding: 0 4px;
+  }
+
+  fa-icon {
+    color: #828282;
+    margin-right: 4px;
+  }
+
+  span:not(:last-child) {
+    border-right: 1px solid #828282;
+  }
+
+}
+
+.promoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.promo {
+  text-align: center;
+  margin-right: 8px;
+
+  span {
+    text-decoration: underline;
+  }
+}
+
+.social {
+  text-align: right;
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: $white-color;
+}
+
+.right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.auth {
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+  margin-right: 20px;
+  border-right: 1px solid $black-color;
+}
+
+.linkIcon {
+  color: $black-color;
+  text-decoration: none;
+
+  fa-icon {
+    color: #828282;
+    margin-right: 6px;
+  }
+
+  &.isActive {
+    color: $gold-color;
+
+    fa-icon {
+      color: $gold-color;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $gold-color;
+
+    fa-icon {
+      color: $gold-color;
+    }
+  }
+}
+
+.Header.scrolling .bottom {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.2);
+}
+
+.cartBtn {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+
+  fa-icon {
+    color: #828282;
+  }
+
+  &:hover fa-icon,
+  &:active fa-icon,
+  &:focus fa-icon {
+    color: $gold-color;
+    cursor: pointer;
+  }
+
+}
+

@@ -1,3 +1,5 @@
+@import "vars";
+
 @font-face {
   font-family: "Red Hat Display";
   font-style: normal;
@@ -11,12 +13,6 @@
   font-weight: 700;
   src: url("./assets/fonts/RedHatDisplay-Bold.ttf") format('truetype');
 }
-
-$black-color: #1a1a1a;
-$gold-color: #ba933e;
-$steel-color: #f5f5f5;
-$breadcrumbs-color: #eaebef;
-$white-color: #FFF;
 
 *, * > *,
 *:after, *:before {

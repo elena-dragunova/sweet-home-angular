@@ -1,0 +1,50 @@
+<header class="header">
+<div class="top">
+  <div class="contacts">
+    <span>
+      <fa-icon [icon]="faPhone"></fa-icon>
+      +391(0)35 2568 4593
+    </span>
+    <span>
+      <fa-icon [icon]="faEnvelope"></fa-icon>
+      sweet-home@gmail.com
+    </span>
+  </div>
+
+  <div class="promoContainer">
+    <p class="promo">
+      Free shipping on all orders over
+      <span>$79</span>
+    </p>
+    <app-badge text="Shop Now!"></app-badge>
+  </div>
+
+
+  <div class="social">
+    <app-social-icons color="grey"></app-social-icons>
+  </div>
+</div>
+
+<div class="bottom">
+  <app-logo color="black"></app-logo>
+
+  <div>
+    MainMenu
+  </div>
+<!--  <MainMenu menuItems={menuItems}/>-->
+
+    <div class="right">
+      <div class="auth">
+        <a class="linkIcon"
+           routerLink="auth"
+           routerLinkActive="isActive">
+          <fa-icon [icon]="faUser"></fa-icon>
+          Login / Sign up
+        </a>
+      </div>
+      <button class="cartBtn">
+        <fa-icon [icon]="faShoppingCart"></fa-icon>
+      </button>
+    </div>
+</div>
+</header>
