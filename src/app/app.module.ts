@@ -13,6 +13,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BadgeComponent } from './components/badge/badge.component';
 import { SocialIconsComponent } from './components/social-icons/social-icons.component';
 import { LogoComponent } from './components/logo/logo.component';
+import { DropdownComponent } from './components/dropdown/dropdown.component';
+import { MainMenuComponent } from './header/main-menu/main-menu.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { LogoComponent } from './components/logo/logo.component';
     HeaderComponent,
     BadgeComponent,
     SocialIconsComponent,
-    LogoComponent
+    LogoComponent,
+    DropdownComponent,
+    MainMenuComponent
   ],
   imports: [
     BrowserModule,

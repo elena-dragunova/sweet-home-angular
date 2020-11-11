@@ -1,0 +1,61 @@
+@import "../../../vars";
+
+.dropdown {
+  position: relative;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px 4px;
+}
+
+.title {
+  margin: 0 4px 0 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $gold-color;
+
+    & + fa-icon {
+      color: $gold-color;
+    }
+  }
+}
+
+.list {
+  position: absolute;
+  background-color: $white-color;
+  z-index: 100;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 150px;
+  list-style: none;
+  margin: 0;
+  padding: 0 10px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.listItem {
+  display: inline-block;
+  color: $black-color;
+  text-decoration: none;
+  padding: 4px 10px;
+}
+
+.listItem:hover,
+.listItem:focus,
+.listItem:active {
+  color: $gold-color;
+}
+
+.isActive {
+  color: $gold-color;
+}

@@ -1,0 +1,22 @@
+@import "../../../vars";
+
+.main-menu {
+  display: flex;
+  justify-content: center;
+}
+
+.menuItem {
+  color: v$black-color;
+  text-decoration: none;
+  padding: 4px 10px;
+}
+
+.menuItem:hover,
+.menuItem:focus,
+.menuItem:active {
+  color: $gold-color;
+}
+
+.isActive {
+  color: $gold-color;
+}

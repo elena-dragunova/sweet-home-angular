@@ -1,0 +1,14 @@
+<div class="dropdown"
+     (mouseenter)="openList()"
+     (mouseleave)="closeList()">
+<div class="header">
+  <div class="title">{{title}}</div>
+  <fa-icon [icon]="faChevronUp" *ngIf="isOpen"></fa-icon>
+  <fa-icon [icon]="faChevronDown" *ngIf="!isOpen"></fa-icon>
+</div>
+<ul class="list" *ngIf="isOpen">
+  <li *ngFor="let item of listItems" routerLinkActive="isActive">
+    <a [routerLink]="[item.to]" class="listItem">{{item.title}}</a>
+  </li>
+</ul>
+</div>
