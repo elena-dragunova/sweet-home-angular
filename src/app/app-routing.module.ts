@@ -8,7 +8,13 @@ import {CartComponent} from './cart/cart.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
-  { path: 'catalog', component: CatalogComponent },
+  { path: 'catalog', component: CatalogComponent, children: [
+      { path: ':category', component: CatalogComponent, children: [
+          { path: ':subcategory', component: CatalogComponent },
+        ]
+      },
+    ]
+  },
   { path: 'blog', component: BlogComponent },
   { path: 'contacts', component: ContactsComponent },
   { path: 'cart', component: CartComponent },
