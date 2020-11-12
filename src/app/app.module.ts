@@ -15,6 +15,7 @@ import { SocialIconsComponent } from './components/social-icons/social-icons.com
 import { LogoComponent } from './components/logo/logo.component';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { MainMenuComponent } from './header/main-menu/main-menu.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { MainMenuComponent } from './header/main-menu/main-menu.component';
     SocialIconsComponent,
     LogoComponent,
     DropdownComponent,
-    MainMenuComponent
+    MainMenuComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

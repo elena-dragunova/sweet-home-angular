@@ -1,0 +1,89 @@
+@import "../../vars";
+
+.footer {
+  background-color: $black-color;
+  color: $white-color;
+}
+
+.footer-main {
+  padding: 40px 0;
+  border-bottom: 1px solid $breadcrumbs-color;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-column {
+  width: calc(25% - 40px);
+  margin: 0 20px;
+
+  .social {
+    margin-top: 24px;
+  }
+}
+
+.title {
+  color: $white-color;
+  text-align: left;
+  margin: 8px 0 20px;
+}
+
+.footer-menu {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+
+  li {
+    margin-bottom: 6px;
+  }
+}
+
+
+.footer-link {
+  color: $breadcrumbs-color;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: $gold-color;
+  }
+}
+
+.contacts {
+  margin-bottom: 20px;
+
+  p {
+    font-size: 14px;
+    color: $breadcrumbs-color;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+
+    fa-icon {
+      margin-right: 10px;
+    }
+  }
+}
+
+
+.footer-copyright {
+  padding: 40px 0;
+
+  p {
+    color: $breadcrumbs-color;
+    font-size: 14px;
+    padding: 0 20px;
+  }
+}
+
+.copy {
+  font-weight: 700;
+  color: $white-color;
+  padding-right: 10px;
+}
