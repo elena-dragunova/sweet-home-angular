@@ -13,6 +13,7 @@ export class MainMenuComponent implements OnInit {
     },
     {
       title: 'Catalog',
+      to: 'catalog',
       items: [
         {
           id: 0,
@@ -33,6 +34,7 @@ export class MainMenuComponent implements OnInit {
     },
     {
       title: 'Furniture',
+      to: 'catalog/furniture',
       items: [
         {
           id: 0,

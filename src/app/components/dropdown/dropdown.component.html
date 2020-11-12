@@ -2,7 +2,7 @@
      (mouseenter)="openList()"
      (mouseleave)="closeList()">
 <div class="header">
-  <div class="title">{{title}}</div>
+  <a [routerLink]="[to]" class="title">{{title}}</a>
   <fa-icon [icon]="faChevronUp" *ngIf="isOpen"></fa-icon>
   <fa-icon [icon]="faChevronDown" *ngIf="!isOpen"></fa-icon>
 </div>

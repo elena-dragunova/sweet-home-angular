@@ -8,6 +8,7 @@ import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 })
 export class DropdownComponent implements OnInit {
   @Input() title: string;
+  @Input() to: string;
   @Input() listItems: [{title: string, to: string}];
   isOpen = false;
 
