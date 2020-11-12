@@ -16,6 +16,7 @@ import { LogoComponent } from './components/logo/logo.component';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { MainMenuComponent } from './header/main-menu/main-menu.component';
 import { FooterComponent } from './footer/footer.component';
+import { CartDrawerComponent } from './cart-drawer/cart-drawer.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { FooterComponent } from './footer/footer.component';
     LogoComponent,
     DropdownComponent,
     MainMenuComponent,
-    FooterComponent
+    FooterComponent,
+    CartDrawerComponent
   ],
   imports: [
     BrowserModule,

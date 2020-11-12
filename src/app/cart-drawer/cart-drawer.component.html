@@ -1,0 +1,7 @@
+<div [ngClass]="!show ? 'close drawer' : 'drawer'">
+  <p>cart-drawer works!</p>
+</div>
+<div *ngIf="show"
+     class="overlay"
+     (click)="onHideCart()"
+></div>

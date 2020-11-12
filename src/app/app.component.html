@@ -1,7 +1,10 @@
 <div class="app">
-  <app-header></app-header>
+  <app-header (showCartDrawer)="showCartDrawer($event)"></app-header>
   <main class="main">
     <router-outlet></router-outlet>
   </main>
   <app-footer></app-footer>
+  <app-cart-drawer [show]="showCart"
+                   (hideCart)="showCartDrawer($event)"
+  ></app-cart-drawer>
 </div>

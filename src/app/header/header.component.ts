@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import { faEnvelope, faPhone, faUser, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -6,15 +6,17 @@ import { faEnvelope, faPhone, faUser, faShoppingCart } from '@fortawesome/free-s
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   faEnvelope = faEnvelope;
   faPhone = faPhone;
   faUser = faUser;
   faShoppingCart = faShoppingCart;
 
+  @Output() showCartDrawer = new EventEmitter<boolean>();
+
   constructor() { }
 
-  ngOnInit(): void {
+  onShowCart(): void {
+    this.showCartDrawer.emit(true);
   }
-
 }
