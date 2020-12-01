@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +18,8 @@ import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { MainMenuComponent } from './header/main-menu/main-menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { CartDrawerComponent } from './cart-drawer/cart-drawer.component';
+import { HomeCarouselComponent } from './home/home-carousel/home-carousel.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @NgModule({
   declarations: [
@@ -33,12 +36,15 @@ import { CartDrawerComponent } from './cart-drawer/cart-drawer.component';
     DropdownComponent,
     MainMenuComponent,
     FooterComponent,
-    CartDrawerComponent
+    CartDrawerComponent,
+    HomeCarouselComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    CarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
