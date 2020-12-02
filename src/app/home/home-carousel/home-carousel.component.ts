@@ -1,14 +1,20 @@
-import {Component, ViewEncapsulation} from '@angular/core';
-import {OwlOptions} from 'ngx-owl-carousel-o';
+import { Component, ViewEncapsulation } from '@angular/core';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
+/**
+ * Home Carousel section component.
+ */
 @Component({
-  selector: 'app-home-carousel',
+  selector: 'sha-home-carousel',
   templateUrl: './home-carousel.component.html',
   styleUrls: ['./home-carousel.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
 export class HomeCarouselComponent {
-  customOptions: OwlOptions = {
+  /**
+   * Option for Owl Carousel.
+   */
+  public customOptions: OwlOptions = {
     loop: true,
     mouseDrag: false,
     touchDrag: false,
@@ -23,26 +29,29 @@ export class HomeCarouselComponent {
     items: 1,
   };
 
-  slides = [
+  /**
+   * Slides for the carousel.
+   */
+  public slides = [
     {
       id: '0',
       src: '../../../assets/img/slider1.jpg',
-      title: 'Slide 1'
+      title: 'Slide 1',
     },
     {
       id: '1',
       src: '../../../assets/img/slider2.jpg',
-      title: 'Slide 2'
+      title: 'Slide 2',
     },
     {
       id: '2',
       src: '../../../assets/img/slider3.jpg',
-      title: 'Slide 3'
+      title: 'Slide 3',
     },
     {
       id: '3',
       src: '../../../assets/img/slider4.jpg',
-      title: 'Slide 4'
+      title: 'Slide 4',
     },
   ];
 

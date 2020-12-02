@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
+/**
+ * Main Menu component for Header.
+ */
 @Component({
-  selector: 'app-main-menu',
+  selector: 'sha-main-menu',
   templateUrl: './main-menu.component.html',
-  styleUrls: ['./main-menu.component.scss']
+  styleUrls: ['./main-menu.component.scss'],
 })
-export class MainMenuComponent implements OnInit {
-  menuItems = [
+export class MainMenuComponent {
+  /**
+   * Menu items array with internal links.
+   */
+  public menuItems = [
     {
       title: 'Home',
-      to: ''
+      to: '',
     },
     {
       title: 'Catalog',
@@ -30,7 +36,7 @@ export class MainMenuComponent implements OnInit {
           title: 'Home Textiles',
           to: 'catalog/textiles',
         },
-      ]
+      ],
     },
     {
       title: 'Furniture',
@@ -51,7 +57,7 @@ export class MainMenuComponent implements OnInit {
           title: 'Cupboards',
           to: 'catalog/furniture/cupboards',
         },
-      ]
+      ],
     },
     {
       title: 'Blog',
@@ -64,8 +70,4 @@ export class MainMenuComponent implements OnInit {
   ];
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

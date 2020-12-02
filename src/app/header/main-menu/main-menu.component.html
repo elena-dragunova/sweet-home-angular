@@ -1,9 +1,9 @@
 <nav class="main-menu">
   <div *ngFor="let item of menuItems">
-    <app-dropdown *ngIf="item.items; else noList"
+    <sha-dropdown *ngIf="item.items; else noList"
                   [title]="item.title"
                   [to]="item.to"
-                  [listItems]="item.items"></app-dropdown>
+                  [listItems]="item.items"></sha-dropdown>
     <ng-template #noList>
       <a [routerLink]="[item.to]"
          [routerLinkActiveOptions]="{exact: true}"

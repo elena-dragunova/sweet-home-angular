@@ -1,18 +1,36 @@
 import { Component, Input } from '@angular/core';
 import { faFacebookF, faTwitter, faInstagramSquare, faPinterest } from '@fortawesome/free-brands-svg-icons';
 
+/**
+ * Social Links component.
+ */
 @Component({
-  selector: 'app-social-icons',
+  selector: 'sha-social-icons',
   templateUrl: './social-icons.component.html',
-  styleUrls: ['./social-icons.component.scss']
+  styleUrls: ['./social-icons.component.scss'],
 })
 export class SocialIconsComponent {
-  @Input() color: string;
+  /**
+   * Color of social icons.
+   */
+  @Input() public color: string;
 
-  faFacebook = faFacebookF;
-  faTwitter = faTwitter;
-  faInstagramm = faInstagramSquare;
-  faPinterest = faPinterest;
+  /**
+   * FontAwesome Facebook icon.
+   */
+  public faFacebook = faFacebookF;
+  /**
+   * FontAwesome Twitter icon.
+   */
+  public faTwitter = faTwitter;
+  /**
+   * FontAwesome Instagramm icon.
+   */
+  public faInstagramm = faInstagramSquare;
+  /**
+   * FontAwesome Pinterest icon.
+   */
+  public faPinterest = faPinterest;
 
   constructor() { }
 }

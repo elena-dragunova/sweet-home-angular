@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
+/**
+ * Catalog pages main component.
+ */
 @Component({
-  selector: 'app-catalog',
+  selector: 'sha-catalog',
   templateUrl: './catalog.component.html',
-  styleUrls: ['./catalog.component.scss']
+  styleUrls: ['./catalog.component.scss'],
 })
-export class CatalogComponent implements OnInit {
+export class CatalogComponent {
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

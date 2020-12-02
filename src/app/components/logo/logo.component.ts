@@ -1,12 +1,18 @@
 import { Component, Input } from '@angular/core';
 
+/**
+ * Logo UI component.
+ */
 @Component({
-  selector: 'app-logo',
+  selector: 'sha-logo',
   templateUrl: './logo.component.html',
-  styleUrls: ['./logo.component.scss']
+  styleUrls: ['./logo.component.scss'],
 })
 export class LogoComponent {
-  @Input() color: string;
+  /**
+   * Color of the Logo.
+   */
+  @Input() public color: string;
 
   constructor() { }
 

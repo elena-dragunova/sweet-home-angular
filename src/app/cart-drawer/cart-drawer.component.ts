@@ -1,17 +1,29 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core';
 
+/**
+ * Cart Drawer component.
+ */
 @Component({
-  selector: 'app-cart-drawer',
+  selector: 'sha-cart-drawer',
   templateUrl: './cart-drawer.component.html',
-  styleUrls: ['./cart-drawer.component.scss']
+  styleUrls: ['./cart-drawer.component.scss'],
 })
 export class CartDrawerComponent {
-  @Input() show: boolean;
-  @Output() hideCart = new EventEmitter<boolean>();
+  /**
+   * Desribes whether the cart is shown or not.
+   */
+  @Input() public show: boolean;
+  /**
+   * Emitting event for hiding cart drawer.
+   */
+  @Output() public hideCart = new EventEmitter<boolean>();
 
   constructor() { }
 
-  onHideCart(): void {
+  /**
+   * Hides cart drawer.
+   */
+  public onHideCart(): void {
     this.hideCart.emit(false);
   }
 

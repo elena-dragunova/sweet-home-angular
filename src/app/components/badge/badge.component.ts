@@ -1,12 +1,18 @@
 import {Component, Input } from '@angular/core';
 
+/**
+ * Badge UI component.
+ */
 @Component({
-  selector: 'app-badge',
+  selector: 'sha-badge',
   templateUrl: './badge.component.html',
-  styleUrls: ['./badge.component.scss']
+  styleUrls: ['./badge.component.scss'],
 })
 export class BadgeComponent {
-  @Input() text: string;
+  /**
+   * Inner text for the Badge component.
+   */
+  @Input() public text: string;
 
   constructor() { }
 }

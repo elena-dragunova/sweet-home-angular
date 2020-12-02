@@ -1,30 +1,63 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
+/**
+ * Dropdown UI component.
+ */
 @Component({
-  selector: 'app-dropdown',
+  selector: 'sha-dropdown',
   templateUrl: './dropdown.component.html',
-  styleUrls: ['./dropdown.component.scss']
+  styleUrls: ['./dropdown.component.scss'],
 })
-export class DropdownComponent implements OnInit {
-  @Input() title: string;
-  @Input() to: string;
-  @Input() listItems: [{title: string, to: string}];
-  isOpen = false;
+export class DropdownComponent {
+  /**
+   * Title of the dropdown.
+   */
+  @Input() public title: string;
+  /**
+   * Link path.
+   */
+  @Input() public to: string;
+  /**
+   * Inner menu items of the dropdown.
+   */
+  @Input() public listItems: [{
+    /**
+     * Title of the inner link.
+     */
+    title: string,
+    /**
+     * Path of the inner link.
+     */
+    to: string,
+  }];
+  /**
+   * Describes whether the dropdown is open or not.
+   */
+  public isOpen = false;
 
-  faChevronUp = faChevronUp;
-  faChevronDown = faChevronDown;
+  /**
+   * FontAwesome ChevronUp icon.
+   */
+  public faChevronUp = faChevronUp;
+  /**
+   * FontAwesome ChevronDown icon.
+   */
+  public faChevronDown = faChevronDown;
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
-
-  openList(): void {
+  /**
+   * Opens dropdown menu.
+   */
+  public openList(): void {
     this.isOpen = true;
   }
 
-  closeList(): void {
+  /**
+   * Closes dropdown menu.
+   */
+  public closeList(): void {
     this.isOpen = false;
   }
 }

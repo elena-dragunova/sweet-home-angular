@@ -1,10 +1,10 @@
 <div class="app">
-  <app-header (showCartDrawer)="showCartDrawer($event)"></app-header>
+  <sha-header (showCartDrawer)="showCartDrawer($event)"></sha-header>
   <main class="main">
     <router-outlet></router-outlet>
   </main>
-  <app-footer></app-footer>
-  <app-cart-drawer [show]="showCart"
+  <sha-footer></sha-footer>
+  <sha-cart-drawer [show]="showCart"
                    (hideCart)="showCartDrawer($event)"
-  ></app-cart-drawer>
+  ></sha-cart-drawer>
 </div>
