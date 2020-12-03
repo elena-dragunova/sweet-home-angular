@@ -1,0 +1,11 @@
+<section class="container">
+  <div class=trending-products>
+    <h2 class="title">Trending Products</h2>
+    <p>Top view in this week</p>
+    <div class="trending-products-container"
+         *ngIf="trendingProducts$ | async as trendingProducts">
+      <sha-product-card *ngFor="let product of trendingProducts"
+                        [product]="product"></sha-product-card>
+    </div>
+  </div>
+</section>

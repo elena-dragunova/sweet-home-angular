@@ -1,0 +1,31 @@
+<div class="product-card">
+  <div class="product-card-main">
+
+          <span class="add-to-cart">
+            <fa-icon [icon]="faShoppingCart"></fa-icon>
+          </span>
+
+    <div class="image-wrapper">
+      <img [src]="product.options[0].image"
+           [alt]="product.name"/>
+    </div>
+  </div>
+
+  <div class="product-card_text">
+    <h4>
+      <a [routerLink]="[product.id]"
+         class="product-card-link">
+        {{ product.name }}
+      </a>
+    </h4>
+    <div class="product-card_price">
+      <p>$ {{ product.price.toFixed(2) }}</p>
+      <div *ngIf="product.options.length > 1">
+        <span *ngFor="let option of product.options"
+              [ngStyle]="{backgroundColor: option.color}"
+              class="color">
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

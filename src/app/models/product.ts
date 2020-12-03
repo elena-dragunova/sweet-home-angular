@@ -1,6 +1,8 @@
+import {ProductOption} from './product-option';
+
 /**
  * Product model.
- */
+ * */
 export class Product {
   /**
    * ID.
@@ -60,11 +62,21 @@ export class Product {
   /**
    * Whether the product is best-seller or not.
    */
-  public bestSeller: boolean;
+  public best_seller: boolean;
 
   /**
-   * Optional: Product's options.
-   * Can contain products of different colors.
+   * Product's options.
+   * Can contain products options of different colors or at least one standard option.
    */
-  public options?: [];
+  public options: ProductOption[];
+
+  /**
+   * Product category.
+   */
+  public category: string;
+
+  /**
+   * Product subcategory.
+   */
+  public subcategory?: string;
 }
