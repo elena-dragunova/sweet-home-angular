@@ -12,6 +12,7 @@ import { CartDrawerComponent } from './cart-drawer/cart-drawer.component';
 import { CartComponent } from './cart/cart.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { BadgeComponent } from './components/badge/badge.component';
+import { ButtonComponent } from './components/button/button.component';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
@@ -22,6 +23,7 @@ import { HeaderComponent } from './header/header.component';
 import { MainMenuComponent } from './header/main-menu/main-menu.component';
 import { HomeCarouselComponent } from './home/home-carousel/home-carousel.component';
 import { HomeComponent } from './home/home.component';
+import { PromoSectionComponent } from './home/promo-section/promo-section.component';
 import { TrendingProductsComponent } from './home/trending-products/trending-products.component';
 
 /**
@@ -46,6 +48,8 @@ import { TrendingProductsComponent } from './home/trending-products/trending-pro
     HomeCarouselComponent,
     TrendingProductsComponent,
     ProductCardComponent,
+    PromoSectionComponent,
+    ButtonComponent,
   ],
   imports: [
     BrowserModule,
