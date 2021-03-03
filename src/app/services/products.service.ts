@@ -55,4 +55,14 @@ export class ProductsService {
     }));
   }
 
+  /**
+   * Filters products with best-seller property.
+   * Returns products array,
+   */
+  public getBestSellers(): Observable<Product[]> {
+    return this.getCatalog().pipe(map(products => {
+      return products.filter(product => product.best_seller === true);
+    }));
+  }
+
 }

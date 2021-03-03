@@ -21,6 +21,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { MainMenuComponent } from './header/main-menu/main-menu.component';
+import { BestSellersComponent } from './home/best-sellers/best-sellers.component';
 import { HomeCarouselComponent } from './home/home-carousel/home-carousel.component';
 import { HomeComponent } from './home/home.component';
 import { PromoCollectionComponent } from './home/promo-collection/promo-collection.component';
@@ -53,6 +54,7 @@ import { TrendingProductsComponent } from './home/trending-products/trending-pro
     ButtonComponent,
     PromoCollectionComponent,
     PromoCollectionComponent,
+    BestSellersComponent,
   ],
   imports: [
     BrowserModule,
