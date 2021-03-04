@@ -26,6 +26,8 @@ import { HomeCarouselComponent } from './home/home-carousel/home-carousel.compon
 import { HomeComponent } from './home/home.component';
 import { PromoCollectionComponent } from './home/promo-collection/promo-collection.component';
 import { PromoSectionComponent } from './home/promo-section/promo-section.component';
+import { SubscribeFormComponent } from './home/subscribe-form/subscribe-form.component';
+import { SubscribeSectionComponent } from './home/subscribe-section/subscribe-section.component';
 import { TrendingProductsComponent } from './home/trending-products/trending-products.component';
 
 /**
@@ -55,6 +57,8 @@ import { TrendingProductsComponent } from './home/trending-products/trending-pro
     PromoCollectionComponent,
     PromoCollectionComponent,
     BestSellersComponent,
+    SubscribeFormComponent,
+    SubscribeSectionComponent,
   ],
   imports: [
     BrowserModule,
