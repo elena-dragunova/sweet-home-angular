@@ -30,6 +30,7 @@ import { PromoSectionComponent } from './home/promo-section/promo-section.compon
 import { SubscribeFormComponent } from './home/subscribe-form/subscribe-form.component';
 import { SubscribeSectionComponent } from './home/subscribe-section/subscribe-section.component';
 import { TrendingProductsComponent } from './home/trending-products/trending-products.component';
+import { AdvantagesSectionComponent } from './home/advantages-section/advantages-section.component';
 
 /**
  * Main root module.
@@ -60,6 +61,7 @@ import { TrendingProductsComponent } from './home/trending-products/trending-pro
     BestSellersComponent,
     SubscribeFormComponent,
     SubscribeSectionComponent,
+    AdvantagesSectionComponent,
   ],
   imports: [
     BrowserModule,

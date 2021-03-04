@@ -1,0 +1,60 @@
+@import "../../../vars";
+
+.advantages-section {
+  background-color: $steel-color;
+  padding: 60px 0;
+
+  .advantages-section-container {
+    display: flex;
+    margin: 0 20px;
+
+    .advantages-item {
+      width: 33.33%;
+      border-left: 1px solid lightgray;
+      padding: 0 50px;
+      text-align: center;
+
+      &:first-child {
+        border-left: none;
+      }
+
+      fa-icon {
+        display: block;
+        font-size: 36px;
+        color: $black-color;
+        margin-bottom: 20px;
+      }
+
+      h4 {
+        margin-bottom: 20px;
+      }
+    }
+
+    .link {
+      display: block;
+      margin-top: 20px;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      color: $black-color;
+
+      fa-icon {
+        display: inline;
+        font-size: 14px;
+        margin-left: 10px;
+      }
+
+      &:hover,
+      &:focus {
+        color: $gold-color;
+
+        fa-icon {
+          color: $gold-color;
+        }
+      }
+    }
+  }
+}
+
+
+
