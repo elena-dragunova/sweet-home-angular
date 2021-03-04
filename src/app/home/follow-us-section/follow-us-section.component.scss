@@ -1,0 +1,76 @@
+@import "../../../vars";
+
+.follow-us-section {
+  text-align: center;
+  padding: 60px 0;
+
+  h2 {
+    margin-bottom: 10px;
+  }
+
+  .follow-us-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .follow-us-item {
+    margin: 20px 20px 0;
+    width: calc(16.66% - 40px);
+
+    .image-wrapper {
+      width: 100%;
+      height: 0;
+      padding-top: 100%;
+      position: relative;
+      overflow: hidden;
+
+      img {
+        position: absolute;
+        top: -50%;
+        bottom: -50%;
+        left: -50%;
+        right: -50%;
+        margin: auto;
+        min-width: 100%;
+        min-height: 100%;
+        max-height: 100%;
+        max-width: none;
+      }
+
+      &::before,
+      &::after {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        bottom: 20px;
+        left: 20px;
+        content: '';
+        opacity: 0;
+        z-index: 2;
+        -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+        transition: opacity 0.35s, transform 0.35s;
+      }
+
+      &::before {
+        border-top: 1px solid $white-color;
+        border-bottom: 1px solid $white-color;
+        -webkit-transform: scale(0,1);
+        transform: scale(0,1);
+      }
+
+      &::after {
+        border-right: 1px solid $white-color;
+        border-left: 1px solid $white-color;
+        -webkit-transform: scale(1,0);
+        transform: scale(1,0);
+      }
+
+      &:hover::before,
+      &:hover::after {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+      }
+    }
+  }
+}
