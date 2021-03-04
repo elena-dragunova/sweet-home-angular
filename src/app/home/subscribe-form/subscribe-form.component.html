@@ -1,1 +1,23 @@
-<p>subscribe-form works!</p>
+<form class="subscribe-form"
+      (ngSubmit)="onSubmit(f)"
+      #f="ngForm">
+  <div class="form-input">
+    <input type="email"
+           name="email"
+           class="email"
+           placeholder="Your email address..."
+           ngModel
+           #email="ngModel"
+           required email>
+    <sha-button type="submit"
+                class="submit-button"
+                [disabled]="!f.valid"
+                buttonStyle="AccentButton"
+                text="Subscribe"></sha-button>
+  </div>
+
+  <p *ngIf="!email.valid && email.touched"
+     class="error-message">
+    Please, enter a valid email.
+  </p>
+</form>

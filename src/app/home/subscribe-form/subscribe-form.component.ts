@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
+/**
+ * Subscription form.
+ */
 @Component({
-  selector: 'app-subscribe-form',
+  selector: 'sha-subscribe-form',
   templateUrl: './subscribe-form.component.html',
-  styleUrls: ['./subscribe-form.component.scss']
+  styleUrls: ['./subscribe-form.component.scss'],
 })
-export class SubscribeFormComponent implements OnInit {
+export class SubscribeFormComponent {
 
   constructor() { }
 
-  ngOnInit(): void {
+  /**
+   * Submit event handler.
+   */
+  public onSubmit(form: NgForm): void {
+    console.log(form);
   }
-
 }

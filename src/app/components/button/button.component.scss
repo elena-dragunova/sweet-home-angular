@@ -17,6 +17,11 @@
   &:active {
     background-color: $gold-color;
   }
+
+  &:disabled {
+    background-color: $disabled-color;
+    cursor: default;
+  }
 }
 
 .AccentButton {
@@ -36,6 +41,11 @@
   &:active {
     background-color: $black-color;
   }
+
+  &:disabled {
+    background-color: $disabled-color;
+    cursor: default;
+  }
 }
 
 .WhiteButton {
@@ -54,5 +64,11 @@
   &:focus,
   &:active {
     background-color: $breadcrumbs-color;
+  }
+
+  &:disabled {
+    background-color: $disabled-color;
+    color: $white-color;
+    cursor: default;
   }
 }

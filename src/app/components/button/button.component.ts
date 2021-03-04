@@ -26,5 +26,11 @@ export class ButtonComponent {
    */
   @Input() public disabled = false;
 
+  /**
+   * Type of the button
+   * Has default value: button.
+   */
+  @Input() public type = 'button';
+
   constructor() { }
 }
