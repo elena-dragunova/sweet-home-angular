@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="articles-section">
+    <h2>From Our Blog</h2>
+    <p>Last articles from our blogs</p>
+    <div class="articles-container" *ngIf="lastArticles$ | async as lastArticles">
+      <sha-article-card *ngFor="let article of lastArticles"
+                        class="article-item"
+                        [article]="article"></sha-article-card>
+    </div>
+  </div>
+</div>

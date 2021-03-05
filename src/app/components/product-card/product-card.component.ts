@@ -4,7 +4,7 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { Product } from '../../models/product';
 
 /**
- * Product Cart common component.
+ * Product Card common component.
  */
 @Component({
   selector: 'sha-product-card',

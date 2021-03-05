@@ -1,0 +1,20 @@
+.articles-section {
+  padding: 60px 0;
+  text-align: center;
+  border-bottom: 1px solid lightgray;
+
+  h2, p {
+    margin-bottom: 20px;
+  }
+
+  .articles-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    .article-item {
+      width: calc(33.33% - 40px);
+      margin: 0 20px;
+    }
+  }
+}
+

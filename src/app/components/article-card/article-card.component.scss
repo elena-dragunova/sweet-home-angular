@@ -1,0 +1,88 @@
+@import "../../../vars";
+
+.article-card {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .image-wrapper {
+    width: 100%;
+    height: 0;
+    padding-bottom: 60%;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 24px;
+
+    img {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      min-width: 100%;
+      min-height: 100%;
+      max-width: none;
+      max-height: 100%;
+      transition: all 0.4s ease-in-out;
+    }
+
+    &:hover,
+    &:focus {
+      img {
+        transform: scale(1.5);
+      }
+    }
+  }
+
+  .data {
+    display: flex;
+    align-items: flex-end;
+    margin: 16px 0 0;
+
+    .author {
+      font-size: 12px;
+      font-weight: 700;
+      margin-right: 10px;
+    }
+
+    .date {
+      font-size: 14px;
+    }
+  }
+
+  .title {
+    min-height: 65px;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  .link {
+    display: inline-block;
+    width: 156px;
+    text-align: center;
+    padding: 14px;
+    border: 2px solid lightgray;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--black-color);
+    text-decoration: none;
+    outline: none;
+
+    fa-icon {
+      margin-left: 10px;
+    }
+
+    &:hover,
+    &:focus {
+      color: $gold-color;
+      border-color: $gold-color;
+
+      fa-icon {
+        color: $gold-color;
+      }
+    }
+  }
+}
