@@ -11,7 +11,7 @@
         </p>
       </div>
       <h4 class="title">{{ article.title }}</h4>
-      <p>{{ article.text }}</p>
+      <p>{{ article.text | truncate:[80, '...'] }}</p>
   </div>
 
   <a routerLink="/"

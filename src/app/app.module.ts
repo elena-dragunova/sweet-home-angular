@@ -34,6 +34,7 @@ import { PromoSectionComponent } from './home/promo-section/promo-section.compon
 import { SubscribeFormComponent } from './home/subscribe-form/subscribe-form.component';
 import { SubscribeSectionComponent } from './home/subscribe-section/subscribe-section.component';
 import { TrendingProductsComponent } from './home/trending-products/trending-products.component';
+import { TruncatePipe } from './truncate.pipe';
 
 /**
  * Main root module.
@@ -68,6 +69,7 @@ import { TrendingProductsComponent } from './home/trending-products/trending-pro
     FollowUsSectionComponent,
     BlogSectionComponent,
     ArticleCardComponent,
+    TruncatePipe,
   ],
   imports: [
     BrowserModule,
