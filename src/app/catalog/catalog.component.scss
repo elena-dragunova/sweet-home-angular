@@ -1,0 +1,12 @@
+.catalog-container {
+  display: flex;
+
+  .catalog-filter {
+    width: 300px;
+    margin-left: 20px;
+  }
+
+  .catalog-main {
+    flex-grow: 1;
+  }
+}

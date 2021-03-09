@@ -1,0 +1,5 @@
+<ul class="breadcrumbs">
+  <li *ngFor="let url of urls$">
+    <a [routerLink]="url.path"> {{ url.name }} / </a>
+  </li>
+</ul>

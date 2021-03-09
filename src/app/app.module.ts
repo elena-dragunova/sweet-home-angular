@@ -11,14 +11,18 @@ import { AppComponent } from './app.component';
 import { BlogComponent } from './blog/blog.component';
 import { CartDrawerComponent } from './cart-drawer/cart-drawer.component';
 import { CartComponent } from './cart/cart.component';
+import { CatalogFilterComponent } from './catalog/catalog-filter/catalog-filter.component';
+import { CatalogProductsComponent } from './catalog/catalog-products/catalog-products.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { ArticleCardComponent } from './components/article-card/article-card.component';
 import { BadgeComponent } from './components/badge/badge.component';
+import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
 import { ButtonComponent } from './components/button/button.component';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { SocialIconsComponent } from './components/social-icons/social-icons.component';
+import { TitleSectionComponent } from './components/title-section/title-section.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
@@ -70,6 +74,10 @@ import { TruncatePipe } from './truncate.pipe';
     BlogSectionComponent,
     ArticleCardComponent,
     TruncatePipe,
+    CatalogFilterComponent,
+    CatalogProductsComponent,
+    TitleSectionComponent,
+    BreadcrumbsComponent,
   ],
   imports: [
     BrowserModule,
