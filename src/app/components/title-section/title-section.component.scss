@@ -1,0 +1,28 @@
+@import "../../../vars";
+
+.title-section {
+  background-color: $steel-color;
+
+  h1 {
+    text-transform: capitalize;
+    font-size: 40px;
+  }
+
+  .title-container {
+    padding: 40px 20px;
+    display: flex;
+    align-items: center;
+
+    & > div {
+      width: 50%;
+    }
+
+    img {
+      display: block;
+      height: 200px;
+      width: auto;
+      margin-right: 0;
+      margin-left: auto;
+    }
+  }
+}

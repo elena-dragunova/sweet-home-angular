@@ -1,6 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {NavigationEnd, Router} from '@angular/router';
-import {filter} from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs/operators';
+
+import { DestroyableComponent, takeUntilDestroy } from '../../utils/destroyable';
 
 class ObjectUrl {
   /**
@@ -22,6 +24,7 @@ class ObjectUrl {
   templateUrl: './breadcrumbs.component.html',
   styleUrls: ['./breadcrumbs.component.scss'],
 })
+@DestroyableComponent()
 export class BreadcrumbsComponent implements OnInit {
 
   constructor(private router: Router ) { }
@@ -49,6 +52,7 @@ export class BreadcrumbsComponent implements OnInit {
    */
   public ngOnInit(): void {
     this.router.events.pipe(
+      takeUntilDestroy(this),
       filter(event => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
         this.urls$ = this.mapUrlObject(event.url);
