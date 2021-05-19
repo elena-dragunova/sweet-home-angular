@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 
 import { Product } from '../models/product';
 import { ProductsService } from '../services/products.service';
-import {DestroyableComponent, takeUntilDestroy} from '../utils/destroyable';
+import { DestroyableComponent, takeUntilDestroy } from '../utils/destroyable';
+
+const CATEGORY_INDEX_IN_ROUTE = 2;
+const SUBCATEGORY_INDEX_IN_ROUTE = 3;
 
 /**
  * Catalog pages main component.
@@ -16,23 +20,105 @@ import {DestroyableComponent, takeUntilDestroy} from '../utils/destroyable';
 })
 @DestroyableComponent()
 export class CatalogComponent implements OnInit {
+  /**
+   * Current url array.
+   */
+  public url$ = this.router.url.split('/');
 
-  private allProducts$: Observable<Product[]>;
+  /**
+   * Current catalog category.
+   */
+  public currentCategory: string = null;
 
-  public categories: Observable<string[]>;
+  /**
+   * Current catalog subcategory.
+   */
+  public currentSubCategory: string = null;
+
+  /**
+   * Current products' categories.
+   */
+  public categories$: Observable<string[]>;
+
+  /**
+   * All possible colors.
+   */
   public colors: string[];
 
-  constructor(private productsService: ProductsService) { }
+  /**
+   * Current category's not-filtered products.
+   */
+  public currentCategoryProducts$: Observable<Product[]>;
 
+  constructor(private productsService: ProductsService, private router: Router) { }
+
+  /**
+   * Init properties.
+   */
   public ngOnInit(): void {
-    this.allProducts$ = this.productsService.getCatalog();
-    this.categories = this.allProducts$.pipe(
+    this.currentCategory = this.url$[CATEGORY_INDEX_IN_ROUTE] || null;
+    this.currentSubCategory = this.url$[SUBCATEGORY_INDEX_IN_ROUTE] || null;
+    this.currentCategoryProducts$ = this.getCurrentCategoryProducts();
+    this.categories$ = this.getCurrentCategories();
+
+    this.router.events.pipe(
       takeUntilDestroy(this),
-      map(products => {
-        return products.map(product => {
-          return product.category;
+      filter(event => event instanceof NavigationEnd))
+      .subscribe((event: NavigationEnd) => {
+        this.url$ = event.url.split('/');
+        this.currentCategory = this.url$[CATEGORY_INDEX_IN_ROUTE] || null;
+        this.currentSubCategory = this.url$[SUBCATEGORY_INDEX_IN_ROUTE] || null;
+        this.currentCategoryProducts$ = this.getCurrentCategoryProducts();
+        this.categories$ = this.getCurrentCategories();
+      });
+  }
+
+  private getCurrentCategories(): Observable<string[]> {
+    if (!this.currentCategory) {
+      return this.currentCategoryProducts$.pipe(
+        takeUntilDestroy(this),
+        map((products) => {
+          return [... new Set(products.map((product) => {
+            return product.category;
+          }))];
+        }));
+    }
+
+    if (this.currentSubCategory) {
+      return null;
+    }
+
+    return this.currentCategoryProducts$.pipe(
+      takeUntilDestroy(this),
+      map((products) => {
+        return [... new Set(products.map((product) => {
+          return product.subcategory;
+        }))];
+      }));
+  }
+
+  private getCurrentCategoryProducts(): Observable<Product[]> {
+    const currentCategoryProducts$ = this.productsService.getCatalog().pipe(
+      takeUntilDestroy(this),
+      map((products) => {
+        if (!this.currentCategory) {
+          return products;
+        }
+
+        return products.filter((product) => {
+          return product.category === this.currentCategory;
         });
-      }),
-    );
+      }));
+    if (!this.currentSubCategory) {
+      return currentCategoryProducts$;
+    }
+
+    return currentCategoryProducts$.pipe(
+      takeUntilDestroy(this),
+      map((products) => {
+        return products.filter((product) => {
+          return product.subcategory === this.currentSubCategory;
+        });
+      }));
   }
 }
