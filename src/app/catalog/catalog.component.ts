@@ -56,21 +56,21 @@ export class CatalogComponent implements OnInit {
    * Init properties.
    */
   public ngOnInit(): void {
-    this.currentCategory = this.url$[CATEGORY_INDEX_IN_ROUTE] || null;
-    this.currentSubCategory = this.url$[SUBCATEGORY_INDEX_IN_ROUTE] || null;
-    this.currentCategoryProducts$ = this.getCurrentCategoryProducts();
-    this.categories$ = this.getCurrentCategories();
-
+    this.setCategoriesAndProducts();
     this.router.events.pipe(
       takeUntilDestroy(this),
       filter(event => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
         this.url$ = event.url.split('/');
-        this.currentCategory = this.url$[CATEGORY_INDEX_IN_ROUTE] || null;
-        this.currentSubCategory = this.url$[SUBCATEGORY_INDEX_IN_ROUTE] || null;
-        this.currentCategoryProducts$ = this.getCurrentCategoryProducts();
-        this.categories$ = this.getCurrentCategories();
+        this.setCategoriesAndProducts();
       });
+  }
+
+  private setCategoriesAndProducts(): void {
+    this.currentCategory = this.url$[CATEGORY_INDEX_IN_ROUTE] || null;
+    this.currentSubCategory = this.url$[SUBCATEGORY_INDEX_IN_ROUTE] || null;
+    this.currentCategoryProducts$ = this.getCurrentCategoryProducts();
+    this.categories$ = this.getCurrentCategories();
   }
 
   private getCurrentCategories(): Observable<string[]> {
