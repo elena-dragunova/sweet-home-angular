@@ -3,8 +3,8 @@
   <div class="container">
     <div class="catalog-container">
       <div class="catalog-filter">
-        <p *ngFor="let cat of categories$ | async">{{cat}}</p>
-        <sha-catalog-filter></sha-catalog-filter>
+        <sha-catalog-filter *ngIf="categories$ | async as categories"
+                            [categories] = categories></sha-catalog-filter>
       </div>
       <div class="catalog-main">
         <sha-catalog-products></sha-catalog-products>

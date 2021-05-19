@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 /**
  * Catalog filters component.
@@ -9,6 +9,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./catalog-filter.component.scss'],
 })
 export class CatalogFilterComponent {
+  /**
+   * Current products' categories.
+   */
+  @Input() public categories: string[];
 
   constructor() { }
 }
