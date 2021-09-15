@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {BehaviorSubject, Observable} from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { baseURL } from '../../api';
@@ -13,16 +13,19 @@ import { Article } from '../models/article';
   providedIn: 'root',
 })
 export class BlogService {
-  constructor(private http: HttpClient) {}
-
   /**
    * Blog articles array.
    */
   public blogArticles$ = new BehaviorSubject<Article[]>([]);
 
   /**
+   * @constructor
+   */
+  constructor(private readonly http: HttpClient) {}
+
+  /**
    * Gets all articles from the server.
-   * Returns articles array.
+   * Sets blogArticles$.
    */
   public getBlogArticles(): void {
     this.http.get(`${baseURL}/blog.json`)
@@ -43,7 +46,7 @@ export class BlogService {
 
   /**
    * Gets lst three articles from the server to display on Home page.
-   * Returns articles array.
+   * @return Articles array observable.
    */
   public getLastThreeArticles(): Observable<Article[]> {
     return this.blogArticles$.pipe(

@@ -8,7 +8,4 @@ import { Component } from '@angular/core';
   templateUrl: './catalog.component.html',
   styleUrls: ['./catalog.component.scss'],
 })
-export class CatalogComponent {
-
-  constructor() { }
-}
+export class CatalogComponent {}

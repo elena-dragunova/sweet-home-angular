@@ -13,24 +13,23 @@ import { Article } from '../../models/article';
 })
 export class ArticleCardComponent implements OnInit {
   /**
+   * Article of the current card.
+   */
+  @Input()
+  public article: Article;
+
+  /**
    * FontAwesome ChevronRight icon.
    */
   public faChevronRight = faChevronRight;
-
-  /**
-   * Article of the current card.
-   */
-  @Input() public article: Article;
 
   /**
    * Date of article.
    */
   public date;
 
-  constructor() { }
-
   /**
-   * Init date property in JS Date format.
+   * @inheritDoc
    */
   public ngOnInit(): void {
     this.date = new Date(this.article.date * 1000);

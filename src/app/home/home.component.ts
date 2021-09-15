@@ -1,14 +1,11 @@
 import { Component } from '@angular/core';
 
 /**
- * FontAwesome Phone icon.
+ * Home page component.
  */
 @Component({
   selector: 'sha-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent {
-
-  constructor() { }
-}
+export class HomeComponent {}

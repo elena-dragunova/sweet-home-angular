@@ -12,8 +12,6 @@ export class LogoComponent {
   /**
    * Color of the Logo.
    */
-  @Input() public color: string;
-
-  constructor() { }
-
+  @Input()
+  public color: string;
 }

@@ -68,6 +68,4 @@ export class MainMenuComponent {
       to: 'contacts',
     },
   ];
-
-  constructor() { }
 }

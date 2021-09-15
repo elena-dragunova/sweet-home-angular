@@ -30,6 +30,4 @@ export class AdvantagesSectionComponent {
    * FontAwesome UndoAlt icon.
    */
   public faUndoAlt = faUndoAlt;
-
-  constructor() { }
 }

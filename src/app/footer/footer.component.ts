@@ -22,7 +22,4 @@ export class FooterComponent {
    * FontAwesome MapMarker icon.
    */
   public faMapMarker = faMapMarker;
-
-  constructor() { }
-
 }

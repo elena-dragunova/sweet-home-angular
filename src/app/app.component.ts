@@ -12,9 +12,6 @@ import { ProductsService } from './services/products.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-
-  constructor(private productsService: ProductsService, private blogService: BlogService) {}
-
   /**
    * Boolean prop.
    * Describes whether the cart is shown or not.
@@ -22,7 +19,13 @@ export class AppComponent implements OnInit {
   public showCart = false;
 
   /**
+   * @constructor
+   */
+  constructor(private productsService: ProductsService, private blogService: BlogService) {}
+
+  /**
    * Shows or hides cart drawer.
+   * @param value showCart value
    */
   public showCartDrawer(value: boolean): void {
     this.showCart = value;

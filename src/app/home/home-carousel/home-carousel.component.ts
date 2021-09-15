@@ -54,6 +54,4 @@ export class HomeCarouselComponent {
       title: 'Slide 4',
     },
   ];
-
-  constructor() { }
 }

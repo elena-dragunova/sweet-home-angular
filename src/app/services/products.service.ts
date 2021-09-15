@@ -13,17 +13,20 @@ import { Product } from '../models/product';
   providedIn: 'root',
 })
 export class ProductsService {
-  constructor(private http: HttpClient) {}
-
   /**
    * Products catalog array.
    */
   public productsCatalog$ = new BehaviorSubject<Product[]>([]);
 
   /**
+   * @constructor
+   */
+  constructor(private readonly http: HttpClient) {}
+
+  /**
    * Gets all products from the catalog.
    * Sets category and subcategory properties to products.
-   * Returns products array.
+   * Sets productsCatalog$.
    */
   public getCatalog(): void {
     this.http.get(`${baseURL}/catalog/categories.json`)
@@ -52,7 +55,7 @@ export class ProductsService {
 
   /**
    * Filters products with trending property.
-   * Returns products array,
+   * @return Products array observable.
    */
   public getTrendingProducts(): Observable<Product[]> {
     return this.productsCatalog$.pipe(map(products => {
@@ -62,7 +65,7 @@ export class ProductsService {
 
   /**
    * Filters products with best-seller property.
-   * Returns products array,
+   * @return Products array observable.
    */
   public getBestSellers(): Observable<Product[]> {
     return this.productsCatalog$.pipe(map(products => {

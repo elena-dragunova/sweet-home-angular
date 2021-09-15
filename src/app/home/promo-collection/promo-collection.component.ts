@@ -14,6 +14,4 @@ export class PromoCollectionComponent {
    * FontAwesome ChevronRight icon.
    */
   public faChevronRight = faChevronRight;
-
-  constructor() { }
 }
