@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import {BehaviorSubject, Observable} from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { baseURL } from '../../api';
@@ -16,11 +16,16 @@ export class BlogService {
   constructor(private http: HttpClient) {}
 
   /**
+   * Blog articles array.
+   */
+  public blogArticles$ = new BehaviorSubject<Article[]>([]);
+
+  /**
    * Gets all articles from the server.
    * Returns articles array.
    */
-  public getBlogArticles(): Observable<Article[]> {
-    return this.http.get(`${baseURL}/blog.json`)
+  public getBlogArticles(): void {
+    this.http.get(`${baseURL}/blog.json`)
       .pipe(
         map((articles: Article[]) => {
           const allArticles = [];
@@ -31,9 +36,9 @@ export class BlogService {
               });
             });
           });
-          return allArticles;
+          this.blogArticles$.next(allArticles);
         }),
-      );
+      ).subscribe();
   }
 
   /**
@@ -41,7 +46,7 @@ export class BlogService {
    * Returns articles array.
    */
   public getLastThreeArticles(): Observable<Article[]> {
-    return this.getBlogArticles().pipe(
+    return this.blogArticles$.pipe(
       map((articles: Article[]) => {
         const sortedArticles = articles.sort((a, b) => {
           return b.date - a.date;

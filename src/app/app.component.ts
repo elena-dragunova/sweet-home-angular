@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { BlogService } from './services/blog.service';
 import { ProductsService } from './services/products.service';
 
 /**
@@ -12,7 +13,7 @@ import { ProductsService } from './services/products.service';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private productsService: ProductsService) {}
+  constructor(private productsService: ProductsService, private blogService: BlogService) {}
 
   /**
    * Boolean prop.
@@ -32,5 +33,6 @@ export class AppComponent implements OnInit {
    */
   public ngOnInit(): void {
     this.productsService.getCatalog();
+    this.blogService.getBlogArticles();
   }
 }

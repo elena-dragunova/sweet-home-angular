@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {BehaviorSubject, Observable} from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { baseURL } from '../../api';
@@ -15,6 +15,9 @@ import { Product } from '../models/product';
 export class ProductsService {
   constructor(private http: HttpClient) {}
 
+  /**
+   * Products catalog array.
+   */
   public productsCatalog$ = new BehaviorSubject<Product[]>([]);
 
   /**
