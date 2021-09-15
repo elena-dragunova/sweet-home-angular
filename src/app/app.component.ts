@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { ProductsService } from './services/products.service';
 
 /**
  * Main root component.
@@ -8,7 +10,9 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
+  constructor(private productsService: ProductsService) {}
 
   /**
    * Boolean prop.
@@ -21,5 +25,12 @@ export class AppComponent {
    */
   public showCartDrawer(value: boolean): void {
     this.showCart = value;
+  }
+
+  /**
+   * @inheritDoc
+   */
+  public ngOnInit(): void {
+    this.productsService.getCatalog();
   }
 }
