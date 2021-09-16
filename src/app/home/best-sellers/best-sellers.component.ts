@@ -13,16 +13,18 @@ import { ProductsService } from '../../services/products.service';
   styleUrls: ['./best-sellers.component.scss'],
 })
 export class BestSellersComponent implements OnInit {
-
   /**
    * List of products with best-seller property.
    */
   public bestSellers$: Observable<Product[]>;
 
-  constructor(private productsService: ProductsService) { }
+  /**
+   * @constructor
+   */
+  constructor(private readonly productsService: ProductsService) { }
 
   /**
-   * Gets best-sellers from the service to display.
+   * @inheritDoc
    */
   public ngOnInit(): void {
     this.bestSellers$ = this.productsService.getBestSellers();

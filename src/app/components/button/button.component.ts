@@ -12,25 +12,27 @@ export class ButtonComponent {
   /**
    * Text content of the button.
    */
-  @Input() public text: string;
+  @Input()
+  public text: string;
 
   /**
    * Button style.
    * Can be MainButton, AccentButton, WhiteButton.
    */
-  @Input() public buttonStyle: string;
+  @Input()
+  public buttonStyle: string;
 
   /**
    * Whether the button is disabled or not.
    * Has default false value.
    */
-  @Input() public disabled = false;
+  @Input()
+  public disabled = false;
 
   /**
    * Type of the button
    * Has default value: button.
    */
-  @Input() public type = 'button';
-
-  constructor() { }
+  @Input()
+  public type = 'button';
 }

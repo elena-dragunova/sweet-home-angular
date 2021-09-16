@@ -8,7 +8,4 @@ import { Component } from '@angular/core';
   templateUrl: './subscribe-section.component.html',
   styleUrls: ['./subscribe-section.component.scss'],
 })
-export class SubscribeSectionComponent {
-
-  constructor() { }
-}
+export class SubscribeSectionComponent {}

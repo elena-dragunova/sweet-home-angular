@@ -13,24 +13,26 @@ export class SocialIconsComponent {
   /**
    * Color of social icons.
    */
-  @Input() public color: string;
+  @Input()
+  public color: string;
 
   /**
    * FontAwesome Facebook icon.
    */
   public faFacebook = faFacebookF;
+
   /**
    * FontAwesome Twitter icon.
    */
   public faTwitter = faTwitter;
+
   /**
    * FontAwesome Instagramm icon.
    */
   public faInstagramm = faInstagramSquare;
+
   /**
    * FontAwesome Pinterest icon.
    */
   public faPinterest = faPinterest;
-
-  constructor() { }
 }

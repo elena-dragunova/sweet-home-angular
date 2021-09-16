@@ -13,15 +13,20 @@ export class DropdownComponent {
   /**
    * Title of the dropdown.
    */
-  @Input() public title: string;
+  @Input()
+  public title: string;
+
   /**
    * Link path.
    */
-  @Input() public to: string;
+  @Input()
+  public to: string;
+
   /**
    * Inner menu items of the dropdown.
    */
-  @Input() public listItems: [{
+  @Input()
+  public listItems: [{
     /**
      * Title of the inner link.
      */
@@ -31,6 +36,7 @@ export class DropdownComponent {
      */
     to: string,
   }];
+
   /**
    * Describes whether the dropdown is open or not.
    */
@@ -44,8 +50,6 @@ export class DropdownComponent {
    * FontAwesome ChevronDown icon.
    */
   public faChevronDown = faChevronDown;
-
-  constructor() { }
 
   /**
    * Opens dropdown menu.

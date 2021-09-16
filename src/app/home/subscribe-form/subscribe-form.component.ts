@@ -10,11 +10,9 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./subscribe-form.component.scss'],
 })
 export class SubscribeFormComponent {
-
-  constructor() { }
-
   /**
    * Submit event handler.
+   * @param form SubscribeForm.
    */
   public onSubmit(form: NgForm): void {
     console.log(form);

@@ -13,16 +13,18 @@ import { BlogService } from '../../services/blog.service';
   styleUrls: ['./blog-section.component.scss'],
 })
 export class BlogSectionComponent implements OnInit {
-
   /**
    * List of last articles of the blog.
    */
   public lastArticles$: Observable<Article[]>;
 
-  constructor(private blogService: BlogService) { }
+  /**
+   * @constructor
+   */
+  constructor(private readonly blogService: BlogService) { }
 
   /**
-   * Get last articles of the blog.
+   * @inheritDoc
    */
   public ngOnInit(): void {
     this.lastArticles$ = this.blogService.getLastThreeArticles();

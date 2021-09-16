@@ -18,10 +18,13 @@ export class TrendingProductsComponent implements OnInit {
    */
   public trendingProducts$: Observable<Product[]>;
 
-  constructor(private productsService: ProductsService) { }
+  /**
+   * @constructor
+   */
+  constructor(private readonly productsService: ProductsService) { }
 
   /**
-   * Gets trending products from the service to display.
+   * @inheritDoc
    */
   public ngOnInit(): void {
     this.trendingProducts$ = this.productsService.getTrendingProducts();

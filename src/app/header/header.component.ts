@@ -11,6 +11,12 @@ import { faEnvelope, faPhone, faUser, faShoppingCart } from '@fortawesome/free-s
 })
 export class HeaderComponent {
   /**
+   * Emits event for showing cart drawer.
+   */
+  @Output()
+  public showCartDrawer = new EventEmitter<boolean>();
+
+  /**
    * FontAwesome Envelope icon.
    */
   public faEnvelope = faEnvelope;
@@ -26,13 +32,6 @@ export class HeaderComponent {
    * FontAwesome ShoppingCart icon.
    */
   public faShoppingCart = faShoppingCart;
-
-  /**
-   * Emits event for showing cart drawer.
-   */
-  @Output() public showCartDrawer = new EventEmitter<boolean>();
-
-  constructor() { }
 
   /**
    * Shows cart drawer.

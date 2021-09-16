@@ -15,12 +15,11 @@ export class ProductCardComponent {
   /**
    * Product of the current card.
    */
-  @Input() public product: Product;
+  @Input()
+  public product: Product;
 
   /**
    * FontAwesome ShoppingCart icon.
    */
   public faShoppingCart = faShoppingCart;
-
-  constructor() { }
 }

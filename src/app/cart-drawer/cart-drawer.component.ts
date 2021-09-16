@@ -1,4 +1,4 @@
-import {Component, Input, Output, EventEmitter} from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 /**
  * Cart Drawer component.
@@ -12,13 +12,14 @@ export class CartDrawerComponent {
   /**
    * Desribes whether the cart is shown or not.
    */
-  @Input() public show: boolean;
+  @Input()
+  public show: boolean;
+
   /**
    * Emitting event for hiding cart drawer.
    */
-  @Output() public hideCart = new EventEmitter<boolean>();
-
-  constructor() { }
+  @Output()
+  public hideCart = new EventEmitter<boolean>();
 
   /**
    * Hides cart drawer.
@@ -26,5 +27,4 @@ export class CartDrawerComponent {
   public onHideCart(): void {
     this.hideCart.emit(false);
   }
-
 }

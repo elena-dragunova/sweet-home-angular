@@ -1,4 +1,4 @@
-import {Component, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 /**
  * Badge UI component.
@@ -12,7 +12,6 @@ export class BadgeComponent {
   /**
    * Inner text for the Badge component.
    */
-  @Input() public text: string;
-
-  constructor() { }
+  @Input()
+  public text: string;
 }
