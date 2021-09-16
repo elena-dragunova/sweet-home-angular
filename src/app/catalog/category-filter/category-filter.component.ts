@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
+import { CatalogFilteringService } from '../../services/catalog-filtering.service';
+
 /**
  * Filtering component.
  */
@@ -22,14 +24,17 @@ export class CategoryFilterComponent {
   public categoriesChanged = new EventEmitter();
 
   /**
+   * @constructor
+   */
+  constructor(private readonly catalogFilteringService: CatalogFilteringService) {}
+
+  /**
    * On changed filtering categories.
    * @param value Checkbox value
    * @param index Index of changed category
    */
   public onCategoriesChange(value: boolean, index: number): void {
-    console.log('cat');
-    console.log(index);
-    console.log(value);
+    this.catalogFilteringService.onCategoriesChange(this.categories, index, value);
   }
 
 }
