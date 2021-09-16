@@ -1,3 +1,8 @@
-<div>
+<div class="category-filter">
+  <h4>Product Categories</h4>
+  <sha-checkbox *ngFor="let category of categories; let index = index"
+                [label]="category"
+                [id]="index"
+                (checkboxChanged)="onCategoriesChange($event, index)"></sha-checkbox>
   <p *ngFor="let category of categories">{{ category }}</p>
 </div>

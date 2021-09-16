@@ -55,10 +55,13 @@ export class CatalogComponent implements OnInit {
    */
   public filteredProducts$: Observable<Product[]>;
 
+  /**
+   * @constructor
+   */
   constructor(private productsService: ProductsService, private router: Router) { }
 
   /**
-   * Init properties.
+   * @inheritDoc
    */
   public ngOnInit(): void {
     this.setCategoriesAndProducts();

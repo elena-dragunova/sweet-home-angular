@@ -1,16 +1,35 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
+/**
+ * Filtering component.
+ */
 @Component({
   selector: 'sha-category-filter',
   templateUrl: './category-filter.component.html',
-  styleUrls: ['./category-filter.component.scss']
+  styleUrls: ['./category-filter.component.scss'],
 })
-export class CategoryFilterComponent implements OnInit {
-  @Input() public categories;
+export class CategoryFilterComponent {
+  /**
+   * Categories to filter.
+   */
+  @Input()
+  public categories;
 
-  constructor() { }
+  /**
+   * Filtering categories changed.
+   */
+  @Output()
+  public categoriesChanged = new EventEmitter();
 
-  ngOnInit(): void {
+  /**
+   * On changed filtering categories.
+   * @param value Checkbox value
+   * @param index Index of changed category
+   */
+  public onCategoriesChange(value: boolean, index: number): void {
+    console.log('cat');
+    console.log(index);
+    console.log(value);
   }
 
 }

@@ -42,6 +42,7 @@ import { TruncatePipe } from './truncate.pipe';
 import { CategoryFilterComponent } from './catalog/category-filter/category-filter.component';
 import { ColorFilterComponent } from './catalog/color-filter/color-filter.component';
 import { PriceFilterComponent } from './catalog/price-filter/price-filter.component';
+import { CheckboxComponent } from './components/checkbox/checkbox.component';
 
 /**
  * Main root module.
@@ -84,6 +85,7 @@ import { PriceFilterComponent } from './catalog/price-filter/price-filter.compon
     CategoryFilterComponent,
     ColorFilterComponent,
     PriceFilterComponent,
+    CheckboxComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
-import {Component, Input} from '@angular/core';
-import {Product} from '../../models/product';
+import { Component, Input } from '@angular/core';
+
+import { Product } from '../../models/product';
 
 /**
  * Catalog Filtered Products component.
@@ -10,8 +11,9 @@ import {Product} from '../../models/product';
   styleUrls: ['./catalog-products.component.scss'],
 })
 export class CatalogProductsComponent {
+  /**
+   * Filtered products to display.
+   */
   @Input()
   public filteredProducts: Product[];
-
-  constructor() { }
 }

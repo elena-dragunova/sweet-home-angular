@@ -1,0 +1,8 @@
+<label class="custom-checkbox"
+       [htmlFor]="id">
+  {{ label }}
+  <input [id]="id"
+         type="checkbox"
+         (change)="onChange($event)">
+  <span class="checkmark"></span>
+</label>
