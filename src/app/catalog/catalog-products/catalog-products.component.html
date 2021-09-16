@@ -1,1 +1,4 @@
-<p>catalog-products works!</p>
+<div class="products">
+  <sha-product-card *ngFor="let product of filteredProducts"
+                    [product]="product"></sha-product-card>
+</div>

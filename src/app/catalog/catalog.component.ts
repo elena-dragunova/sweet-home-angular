@@ -50,6 +50,11 @@ export class CatalogComponent implements OnInit {
    */
   public currentCategoryProducts$: Observable<Product[]>;
 
+  /**
+   * Filtered products to display.
+   */
+  public filteredProducts$: Observable<Product[]>;
+
   constructor(private productsService: ProductsService, private router: Router) { }
 
   /**
@@ -70,6 +75,7 @@ export class CatalogComponent implements OnInit {
     this.currentCategory = this.url$[CATEGORY_INDEX_IN_ROUTE] || null;
     this.currentSubCategory = this.url$[SUBCATEGORY_INDEX_IN_ROUTE] || null;
     this.currentCategoryProducts$ = this.getCurrentCategoryProducts();
+    this.filteredProducts$ = this.currentCategoryProducts$;
     this.categories$ = this.getCurrentCategories();
   }
 

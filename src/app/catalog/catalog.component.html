@@ -6,7 +6,8 @@
         <sha-catalog-filter [categories] = "categories$ | async"></sha-catalog-filter>
       </div>
       <div class="catalog-main">
-        <sha-catalog-products></sha-catalog-products>
+        <sha-catalog-products *ngIf="filteredProducts$ | async as filteredProducts"
+                              [filteredProducts]="filteredProducts"></sha-catalog-products>
       </div>
     </div>
   </div>
