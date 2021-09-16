@@ -39,6 +39,9 @@ import { SubscribeFormComponent } from './home/subscribe-form/subscribe-form.com
 import { SubscribeSectionComponent } from './home/subscribe-section/subscribe-section.component';
 import { TrendingProductsComponent } from './home/trending-products/trending-products.component';
 import { TruncatePipe } from './truncate.pipe';
+import { CategoryFilterComponent } from './catalog/category-filter/category-filter.component';
+import { ColorFilterComponent } from './catalog/color-filter/color-filter.component';
+import { PriceFilterComponent } from './catalog/price-filter/price-filter.component';
 
 /**
  * Main root module.
@@ -78,6 +81,9 @@ import { TruncatePipe } from './truncate.pipe';
     CatalogProductsComponent,
     TitleSectionComponent,
     BreadcrumbsComponent,
+    CategoryFilterComponent,
+    ColorFilterComponent,
+    PriceFilterComponent,
   ],
   imports: [
     BrowserModule,

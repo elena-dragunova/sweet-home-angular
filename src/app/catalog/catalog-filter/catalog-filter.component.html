@@ -1,3 +1,6 @@
 <div>
-  <p *ngFor="let category of categories">{{ category }}</p>
+  <sha-category-filter *ngIf="categories"
+                       [categories]="categories"></sha-category-filter>
+  <sha-color-filter></sha-color-filter>
+  <sha-price-filter></sha-price-filter>
 </div>
