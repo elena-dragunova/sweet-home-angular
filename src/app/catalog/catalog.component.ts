@@ -98,7 +98,7 @@ export class CatalogComponent implements OnInit {
   }
 
   private getCurrentCategoryProducts(): Observable<Product[]> {
-    const currentCategoryProducts$ = this.productsService.getCatalog().pipe(
+    const currentCategoryProducts$ = this.productsService.productsCatalog$.pipe(
       takeUntilDestroy(this),
       map((products) => {
         if (!this.currentCategory) {
