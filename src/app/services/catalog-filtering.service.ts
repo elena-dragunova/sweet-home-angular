@@ -61,7 +61,6 @@ export class CatalogFilteringService {
       const catIndex = this.currentCategoryFilters.findIndex(cat => cat === changedCategoryFilter);
       this.currentCategoryFilters.splice(catIndex, 1);
     }
-    console.log(this.currentCategoryFilters)
     this.filterProducts();
   }
 
@@ -85,36 +84,25 @@ export class CatalogFilteringService {
   }
 
   /**
-   * Filter product by all current filters.
+   * Filter products by category.
    */
-  private filterProducts(): void {
+  private filterByCategory(): Product[] {
     const filteredByCategory: Product[] = [];
 
-    if (!this.currentCategoryFilters.length) {
-      this.currentCategoryProducts$.pipe(
-        takeUntilDestroy(this),
-        map(products => {
+    this.currentCategoryProducts$.pipe(
+      takeUntilDestroy(this),
+      map(products => {
+        if (!this.currentCategoryFilters.length) {
           products.forEach(product => filteredByCategory.push(product));
-        }),
-      ).subscribe();
-    } else if (!this.currentCategory) {
-      this.currentCategoryProducts$.pipe(
-        takeUntilDestroy(this),
-        map(products => {
+        } else if (!this.currentCategory) {
           this.currentCategoryFilters.forEach(filter => {
             products.forEach(product => {
               if (product.category === filter) {
-                console.log(product);
                 filteredByCategory.push(product);
               }
             });
           });
-        }),
-      ).subscribe();
-    } else {
-      this.currentCategoryProducts$.pipe(
-        takeUntilDestroy(this),
-        map(products => {
+        } else {
           this.currentCategoryFilters.forEach(filter => {
             products.forEach(product => {
               if (product.subcategory === filter) {
@@ -122,9 +110,18 @@ export class CatalogFilteringService {
               }
             });
           });
-        }),
-      ).subscribe();
-    }
+        }
+      }),
+    ).subscribe();
+
+    return filteredByCategory;
+  }
+
+  /**
+   * Filter product by all current filters.
+   */
+  private filterProducts(): void {
+    const filteredByCategory = this.filterByCategory();
     this.filteredProducts$.next(filteredByCategory);
   }
 
