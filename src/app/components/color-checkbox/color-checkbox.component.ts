@@ -1,25 +1,16 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
-/**
- * Checkbox UI component.
- */
 @Component({
-  selector: 'sha-checkbox',
-  templateUrl: './checkbox.component.html',
-  styleUrls: ['./checkbox.component.scss'],
+  selector: 'sha-color-checkbox',
+  templateUrl: './color-checkbox.component.html',
+  styleUrls: ['./color-checkbox.component.scss'],
 })
-export class CheckboxComponent {
+export class ColorCheckboxComponent {
   /**
-   * Label.
+   * Color property.
    */
   @Input()
-  public label;
-
-  /**
-   * Checkbox id.
-   */
-  @Input()
-  public id;
+  public color: string;
 
   /**
    * On checkbox changed event emitter.
@@ -28,7 +19,7 @@ export class CheckboxComponent {
   public checkboxChanged = new EventEmitter();
 
   /**
-   * Emits value of checkbox changed.
+   * Emits value and id of checkbox changed.
    * @param event Checkbox change event.
    */
   public onChange(event: Event): void {
@@ -36,5 +27,4 @@ export class CheckboxComponent {
     const value = target.checked;
     this.checkboxChanged.emit(value);
   }
-
 }

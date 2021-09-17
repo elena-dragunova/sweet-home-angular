@@ -43,6 +43,7 @@ import { CategoryFilterComponent } from './catalog/category-filter/category-filt
 import { ColorFilterComponent } from './catalog/color-filter/color-filter.component';
 import { PriceFilterComponent } from './catalog/price-filter/price-filter.component';
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
+import { ColorCheckboxComponent } from './components/color-checkbox/color-checkbox.component';
 
 /**
  * Main root module.
@@ -86,6 +87,7 @@ import { CheckboxComponent } from './components/checkbox/checkbox.component';
     ColorFilterComponent,
     PriceFilterComponent,
     CheckboxComponent,
+    ColorCheckboxComponent,
   ],
   imports: [
     BrowserModule,

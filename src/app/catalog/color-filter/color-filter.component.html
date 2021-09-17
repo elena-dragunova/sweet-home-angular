@@ -1,1 +1,9 @@
-<p>color-filter works!</p>
+<div class="color-filter">
+  <h4>Color</h4>
+  <div class="color-filter-container">
+    <sha-color-checkbox *ngFor="let color of colorOptions$ | async"
+                        [color]="color"></sha-color-checkbox>
+  </div>
+</div>
+
+

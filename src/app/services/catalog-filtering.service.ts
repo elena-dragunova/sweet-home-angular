@@ -21,7 +21,7 @@ export class CatalogFilteringService {
   /**
    * Current filtered products.
    */
-  public filteredProducts$ = new BehaviorSubject([]);
+  public filteredProducts$ = new BehaviorSubject<Product[]>([]);
 
   /**
    * Current catalog category.
@@ -36,7 +36,9 @@ export class CatalogFilteringService {
   /**
    * Current category's not-filtered products.
    */
-  public currentCategoryProducts$ = new BehaviorSubject([]);
+  public currentCategoryProducts$ = new BehaviorSubject<Product[]>([]);
+
+  public currentColors$ = new BehaviorSubject<string[]>([]);
 
   private currentCategoryFilters = [];
   private currentColorFilters = [];
@@ -194,5 +196,26 @@ export class CatalogFilteringService {
           return product.subcategory === this.currentSubCategory;
         });
       }));
+  }
+
+  /**
+   * Get current products' colors.
+   */
+  public setCurrentColors(): void {
+    this.filteredProducts$.pipe(
+      takeUntilDestroy(this),
+      map((products) => {
+        const colors: string[] = [];
+
+        products.forEach((product) => {
+          product.options.forEach(option => {
+            colors.push(option.color);
+          });
+        });
+        return colors;
+      })).subscribe(colorOptions => {
+      const colorOptionsUnique = [...new Set(colorOptions)];
+      this.currentColors$.next(colorOptionsUnique);
+    });
   }
 }

@@ -1,0 +1,7 @@
+<div class="color-checkbox"
+     [ngStyle]="{backgroundColor: color}">
+  <input type="checkbox"
+         [name]="color"
+         (change)="onChange($event)">
+  <span class="checkmark"></span>
+</div>

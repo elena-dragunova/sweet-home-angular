@@ -59,6 +59,7 @@ export class CatalogComponent implements OnInit {
   private onRouteChange(): void {
     this.catalogFilteringService.clearAllFilters();
     this.catalogFilteringService.setCategoriesAndProducts(this.url$);
+    this.catalogFilteringService.setCurrentColors();
     this.categories$ = this.catalogFilteringService.getCurrentCategories();
     this.filteredProducts$ = this.catalogFilteringService.filteredProducts$;
   }
