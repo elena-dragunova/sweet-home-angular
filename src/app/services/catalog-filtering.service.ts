@@ -61,6 +61,7 @@ export class CatalogFilteringService {
       const catIndex = this.currentCategoryFilters.findIndex(cat => cat === changedCategoryFilter);
       this.currentCategoryFilters.splice(catIndex, 1);
     }
+    console.log(this.currentCategoryFilters)
     this.filterProducts();
   }
 
@@ -87,7 +88,44 @@ export class CatalogFilteringService {
    * Filter product by all current filters.
    */
   private filterProducts(): void {
-    this.filteredProducts$.next([]);
+    const filteredByCategory: Product[] = [];
+
+    if (!this.currentCategoryFilters.length) {
+      this.currentCategoryProducts$.pipe(
+        takeUntilDestroy(this),
+        map(products => {
+          products.forEach(product => filteredByCategory.push(product));
+        }),
+      ).subscribe();
+    } else if (!this.currentCategory) {
+      this.currentCategoryProducts$.pipe(
+        takeUntilDestroy(this),
+        map(products => {
+          this.currentCategoryFilters.forEach(filter => {
+            products.forEach(product => {
+              if (product.category === filter) {
+                console.log(product);
+                filteredByCategory.push(product);
+              }
+            });
+          });
+        }),
+      ).subscribe();
+    } else {
+      this.currentCategoryProducts$.pipe(
+        takeUntilDestroy(this),
+        map(products => {
+          this.currentCategoryFilters.forEach(filter => {
+            products.forEach(product => {
+              if (product.subcategory === filter) {
+                filteredByCategory.push(product);
+              }
+            });
+          });
+        }),
+      ).subscribe();
+    }
+    this.filteredProducts$.next(filteredByCategory);
   }
 
   /**
