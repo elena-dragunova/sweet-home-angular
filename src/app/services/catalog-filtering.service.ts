@@ -68,8 +68,25 @@ export class CatalogFilteringService {
 
   /**
    * Changes current color filters.
+   * @param index Color index
+   * @param value Color filter value
    */
-  public onColorsChange() {}
+  public onColorsChange(index: number, value: boolean): void {
+    // this.currentColors$.pipe(
+    //   takeUntilDestroy(this),
+    //   map(options => {
+    //     const changedColorOption = options[index];
+    //     if (value) {
+    //       this.currentColorFilters.push(changedColorOption);
+    //     } else {
+    //       const colorIndex = this.currentColorFilters.findIndex(color => color === changedColorOption);
+    //       this.currentColorFilters.splice(colorIndex, 1);
+    //     }
+    //     console.log(this.currentColorFilters);
+    //     this.filterProducts();
+    //   }),
+    // ).subscribe();
+  }
 
   /**
    * Changes current price filters.
@@ -88,7 +105,7 @@ export class CatalogFilteringService {
   /**
    * Filter products by category.
    */
-  private filterByCategory(): Product[] {
+  private filterProductsByCategory(): Product[] {
     const filteredByCategory: Product[] = [];
 
     this.currentCategoryProducts$.pipe(
@@ -120,10 +137,15 @@ export class CatalogFilteringService {
   }
 
   /**
+   * Filter products by category.
+   */
+  private filterProductsByColor() {}
+
+  /**
    * Filter product by all current filters.
    */
   private filterProducts(): void {
-    const filteredByCategory = this.filterByCategory();
+    const filteredByCategory = this.filterProductsByCategory();
     this.filteredProducts$.next(filteredByCategory);
   }
 
