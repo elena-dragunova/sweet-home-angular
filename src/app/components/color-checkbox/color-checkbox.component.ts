@@ -1,5 +1,8 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
+/**
+ * Color selector UI component.
+ */
 @Component({
   selector: 'sha-color-checkbox',
   templateUrl: './color-checkbox.component.html',

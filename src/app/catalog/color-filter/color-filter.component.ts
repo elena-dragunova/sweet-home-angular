@@ -1,7 +1,11 @@
-import {Component, OnInit, Output, EventEmitter} from '@angular/core';
-import {Observable} from 'rxjs';
-import {CatalogFilteringService} from '../../services/catalog-filtering.service';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Observable } from 'rxjs';
 
+import { CatalogFilteringService } from '../../services/catalog-filtering.service';
+
+/**
+ * Color filter component.
+ */
 @Component({
   selector: 'sha-color-filter',
   templateUrl: './color-filter.component.html',
@@ -14,11 +18,20 @@ export class ColorFilterComponent implements OnInit {
   @Output()
   public colorsChanged = new EventEmitter();
 
+  /**
+   * Color possible options for the current category.
+   */
   public colorOptions$: Observable<string[]>;
 
+  /**
+   * @constructor
+   */
   constructor(private readonly catalogFilteringService: CatalogFilteringService) { }
 
-  ngOnInit(): void {
+  /**
+   * @inheritDoc
+   */
+  public ngOnInit(): void {
     this.colorOptions$ = this.catalogFilteringService.currentColors$;
   }
 
@@ -30,5 +43,4 @@ export class ColorFilterComponent implements OnInit {
   public onColorsChange(value: boolean, index: number): void {
     this.catalogFilteringService.onColorsChange(index, value);
   }
-
 }

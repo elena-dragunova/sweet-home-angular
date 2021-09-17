@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CatalogFilteringService } from '../../services/catalog-filtering.service';
 
 /**
- * Filtering component.
+ * Category filter component.
  */
 @Component({
   selector: 'sha-category-filter',

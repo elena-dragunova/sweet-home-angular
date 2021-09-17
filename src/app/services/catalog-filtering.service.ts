@@ -38,6 +38,9 @@ export class CatalogFilteringService {
    */
   public currentCategoryProducts$ = new BehaviorSubject<Product[]>([]);
 
+  /**
+   * Current category's products colors.
+   */
   public currentColors$ = new BehaviorSubject<string[]>([]);
 
   private currentCategoryFilters = [];
@@ -82,8 +85,7 @@ export class CatalogFilteringService {
           const colorIndex = this.currentColorFilters.findIndex(color => color === changedColorOption);
           this.currentColorFilters.splice(colorIndex, 1);
         }
-        console.log(this.currentColorFilters);
-        this.filterProductsByColor();
+        this.filterProducts();
       }),
     ).subscribe();
   }
@@ -91,7 +93,7 @@ export class CatalogFilteringService {
   /**
    * Changes current price filters.
    */
-  public onPricesChange() {}
+  public onPricesChange(): void {}
 
   /**
    * Clear all filters.
@@ -139,7 +141,7 @@ export class CatalogFilteringService {
   /**
    * Filter products by color.
    */
-  private filterProductsByColor() {
+  private filterProductsByColor(): Product[] {
     const filteredByColor: Product[] = [];
 
     this.currentCategoryProducts$.pipe(
@@ -161,7 +163,7 @@ export class CatalogFilteringService {
       }),
     ).subscribe();
 
-    console.log(filteredByColor);
+    return filteredByColor;
   }
 
   /**
@@ -169,7 +171,15 @@ export class CatalogFilteringService {
    */
   private filterProducts(): void {
     const filteredByCategory = this.filterProductsByCategory();
-    this.filteredProducts$.next(filteredByCategory);
+    const filteredByColor = this.filterProductsByColor();
+
+    const filteredProducts = [];
+    filteredByCategory.forEach(product => {
+      if (filteredByColor.indexOf(product) >= 0) {
+        filteredProducts.push(product);
+      }
+    });
+    this.filteredProducts$.next(filteredProducts);
   }
 
   /**
@@ -247,7 +257,7 @@ export class CatalogFilteringService {
    * Get current products' colors.
    */
   public setCurrentColors(): void {
-    this.filteredProducts$.pipe(
+    this.currentCategoryProducts$.pipe(
       takeUntilDestroy(this),
       map((products) => {
         const colors: string[] = [];

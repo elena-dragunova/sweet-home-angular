@@ -4,7 +4,7 @@
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  border: 1px solid rgb(99, 97, 98);
+  border: 1px solid lightgray;
   user-select: none;
   position: relative;
 
@@ -26,13 +26,12 @@
     top: -3px;
     left: -3px;
     border-radius: 50%;
-    background-color: var(--gold-color);
+    background-color: transparent;
     z-index: -1;
-    display: none;
   }
 
   input:checked + .checkmark {
-    display: block;
+    background-color: $gold-color;
   }
 
 }

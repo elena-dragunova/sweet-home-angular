@@ -14,10 +14,15 @@ import { CartComponent } from './cart/cart.component';
 import { CatalogFilterComponent } from './catalog/catalog-filter/catalog-filter.component';
 import { CatalogProductsComponent } from './catalog/catalog-products/catalog-products.component';
 import { CatalogComponent } from './catalog/catalog.component';
+import { CategoryFilterComponent } from './catalog/category-filter/category-filter.component';
+import { ColorFilterComponent } from './catalog/color-filter/color-filter.component';
+import { PriceFilterComponent } from './catalog/price-filter/price-filter.component';
 import { ArticleCardComponent } from './components/article-card/article-card.component';
 import { BadgeComponent } from './components/badge/badge.component';
 import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
 import { ButtonComponent } from './components/button/button.component';
+import { CheckboxComponent } from './components/checkbox/checkbox.component';
+import { ColorCheckboxComponent } from './components/color-checkbox/color-checkbox.component';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
@@ -39,11 +44,6 @@ import { SubscribeFormComponent } from './home/subscribe-form/subscribe-form.com
 import { SubscribeSectionComponent } from './home/subscribe-section/subscribe-section.component';
 import { TrendingProductsComponent } from './home/trending-products/trending-products.component';
 import { TruncatePipe } from './truncate.pipe';
-import { CategoryFilterComponent } from './catalog/category-filter/category-filter.component';
-import { ColorFilterComponent } from './catalog/color-filter/color-filter.component';
-import { PriceFilterComponent } from './catalog/price-filter/price-filter.component';
-import { CheckboxComponent } from './components/checkbox/checkbox.component';
-import { ColorCheckboxComponent } from './components/color-checkbox/color-checkbox.component';
 
 /**
  * Main root module.

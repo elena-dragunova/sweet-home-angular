@@ -39,7 +39,7 @@ export class CatalogComponent implements OnInit {
   constructor(
     private readonly productsService: ProductsService,
     private readonly router: Router,
-    private readonly catalogFilteringService: CatalogFilteringService
+    private readonly catalogFilteringService: CatalogFilteringService,
   ) { }
 
   /**
