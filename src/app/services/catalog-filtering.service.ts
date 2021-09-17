@@ -72,20 +72,20 @@ export class CatalogFilteringService {
    * @param value Color filter value
    */
   public onColorsChange(index: number, value: boolean): void {
-    // this.currentColors$.pipe(
-    //   takeUntilDestroy(this),
-    //   map(options => {
-    //     const changedColorOption = options[index];
-    //     if (value) {
-    //       this.currentColorFilters.push(changedColorOption);
-    //     } else {
-    //       const colorIndex = this.currentColorFilters.findIndex(color => color === changedColorOption);
-    //       this.currentColorFilters.splice(colorIndex, 1);
-    //     }
-    //     console.log(this.currentColorFilters);
-    //     this.filterProducts();
-    //   }),
-    // ).subscribe();
+    this.currentColors$.pipe(
+      takeUntilDestroy(this),
+      map(options => {
+        const changedColorOption = options[index];
+        if (value) {
+          this.currentColorFilters.push(changedColorOption);
+        } else {
+          const colorIndex = this.currentColorFilters.findIndex(color => color === changedColorOption);
+          this.currentColorFilters.splice(colorIndex, 1);
+        }
+        console.log(this.currentColorFilters);
+        this.filterProductsByColor();
+      }),
+    ).subscribe();
   }
 
   /**
@@ -137,9 +137,32 @@ export class CatalogFilteringService {
   }
 
   /**
-   * Filter products by category.
+   * Filter products by color.
    */
-  private filterProductsByColor() {}
+  private filterProductsByColor() {
+    const filteredByColor: Product[] = [];
+
+    this.currentCategoryProducts$.pipe(
+      takeUntilDestroy(this),
+      map(products => {
+        if (!this.currentColorFilters.length) {
+          products.forEach(product => filteredByColor.push(product));
+        } else {
+          this.currentColorFilters.forEach(filter => {
+            products.forEach(product => {
+              const productHasFilterColor = product.options.some(option => option.color === filter);
+              const productIsNotFilteredYet = filteredByColor.indexOf(product) === -1;
+              if (productHasFilterColor && productIsNotFilteredYet) {
+                filteredByColor.push(product);
+              }
+            });
+          });
+        }
+      }),
+    ).subscribe();
+
+    console.log(filteredByColor);
+  }
 
   /**
    * Filter product by all current filters.
