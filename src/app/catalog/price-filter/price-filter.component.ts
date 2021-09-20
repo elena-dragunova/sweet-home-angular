@@ -40,7 +40,6 @@ export class PriceFilterComponent {
    * @param index Index of changed prices option
    */
   public onPricesChange(value: boolean, index: number): void {
-    console.log('price changes');
     this.catalogFilteringService.onPricesChange(index, value);
   }
 

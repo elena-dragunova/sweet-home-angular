@@ -34,7 +34,6 @@ export class CategoryFilterComponent {
    * @param index Index of changed category
    */
   public onCategoriesChange(value: boolean, index: number): void {
-    console.log('category changes');
     this.catalogFilteringService.onCategoriesChange(this.categories, index, value);
   }
 
