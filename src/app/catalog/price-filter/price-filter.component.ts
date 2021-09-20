@@ -1,5 +1,6 @@
-import {Component, EventEmitter, Output} from '@angular/core';
-import {CatalogFilteringService} from '../../services/catalog-filtering.service';
+import { Component, EventEmitter, Output } from '@angular/core';
+
+import { CatalogFilteringService } from '../../services/catalog-filtering.service';
 
 /**
  * Price filter component.

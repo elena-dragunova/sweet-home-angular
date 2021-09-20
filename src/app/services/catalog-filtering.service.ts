@@ -104,8 +104,14 @@ export class CatalogFilteringService {
    * Changes current price filters.
    */
   public onPricesChange(index: number, value: boolean): void {
-    console.log(index);
-    console.log(value);
+    const currentPricesRange = this.priceRanges[index];
+    if (value) {
+      this.currentPriceFilters.push(currentPricesRange);
+    } else {
+      const currentPriceOptionIndex = this.currentPriceFilters.findIndex(prices => prices === currentPricesRange);
+      this.currentPriceFilters.splice(currentPriceOptionIndex, 1);
+    }
+    this.filterProducts();
   }
 
   /**
@@ -180,15 +186,45 @@ export class CatalogFilteringService {
   }
 
   /**
+   * Filter products by prices.
+   */
+  private filterProductsByPrices(): Product[] {
+    const filteredByPrices: Product[] = [];
+
+    this.currentCategoryProducts$.pipe(
+      takeUntilDestroy(this),
+      map(products => {
+        if (!this.currentPriceFilters.length) {
+          products.forEach(product => filteredByPrices.push(product));
+        } else {
+          this.currentPriceFilters.forEach(filter => {
+            products.forEach(product => {
+              if (product.price >= filter[0] && product.price <= filter[1]) {
+                filteredByPrices.push(product);
+              }
+
+            });
+          });
+        }
+      }),
+    ).subscribe();
+
+    return filteredByPrices;
+  }
+
+  /**
    * Filter product by all current filters.
    */
   private filterProducts(): void {
     const filteredByCategory = this.filterProductsByCategory();
     const filteredByColor = this.filterProductsByColor();
+    const filteredByPrices = this.filterProductsByPrices();
 
     const filteredProducts = [];
     filteredByCategory.forEach(product => {
-      if (filteredByColor.indexOf(product) >= 0) {
+      const alsoFilteredByColor = filteredByColor.indexOf(product) >= 0;
+      const alsoFilteredByPrices = filteredByPrices.indexOf(product) >= 0;
+      if (alsoFilteredByColor && alsoFilteredByPrices) {
         filteredProducts.push(product);
       }
     });
