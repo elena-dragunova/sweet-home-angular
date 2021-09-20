@@ -43,6 +43,16 @@ export class CatalogFilteringService {
    */
   public currentColors$ = new BehaviorSubject<string[]>([]);
 
+  /**
+   * Possible price ranges.
+   */
+  public priceRanges = [
+    [0, 20],
+    [20, 50],
+    [50, 100],
+    [100, 1000],
+  ];
+
   private currentCategoryFilters = [];
   private currentColorFilters = [];
   private currentPriceFilters = [];
@@ -93,7 +103,10 @@ export class CatalogFilteringService {
   /**
    * Changes current price filters.
    */
-  public onPricesChange(): void {}
+  public onPricesChange(index: number, value: boolean): void {
+    console.log(index);
+    console.log(value);
+  }
 
   /**
    * Clear all filters.

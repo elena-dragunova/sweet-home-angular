@@ -46,11 +46,20 @@
     }
   }
 
+  input:checked ~ .checkmark:after {
+    display: block;
+  }
+}
+
+.custom-checkbox.gold {
+  input:checked ~ .checkmark {
+    background-color: $gold-color;
+  }
+}
+
+
+.custom-checkbox.black {
   input:checked ~ .checkmark {
     background-color: $black-color;
-
-    &:after {
-      display: block;
-    }
   }
 }

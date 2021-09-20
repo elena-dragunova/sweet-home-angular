@@ -1,7 +1,8 @@
 <div class="category-filter">
   <h4>Product Categories</h4>
-  <sha-checkbox *ngFor="let category of categories; let index = index"
+  <sha-checkbox *ngFor="let category of categories; let index = index; trackBy: trackByCategory"
                 [label]="category"
-                [id]="index"
+                [id]="category"
+                [activeColor]="'black'"
                 (checkboxChanged)="onCategoriesChange($event, index)"></sha-checkbox>
 </div>

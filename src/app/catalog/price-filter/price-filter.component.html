@@ -1,1 +1,9 @@
-<p>price-filter works!</p>
+<div class="category-filter">
+  <h4>Product Price</h4>
+  <sha-checkbox *ngFor="let price of priceRanges; let index = index; trackBy: trackByPrices"
+                [label]="getPriceString(price)"
+                [id]="index"
+                [activeColor]="'gold'"
+                (checkboxChanged)="onPricesChange($event, index)"></sha-checkbox>
+</div>
+

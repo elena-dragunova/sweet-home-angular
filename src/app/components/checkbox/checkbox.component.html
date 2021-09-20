@@ -1,5 +1,6 @@
 <label class="custom-checkbox"
-       [htmlFor]="id">
+       [htmlFor]="id"
+       [ngClass]="getActiveClass()">
   {{ label }}
   <input [id]="id"
          type="checkbox"

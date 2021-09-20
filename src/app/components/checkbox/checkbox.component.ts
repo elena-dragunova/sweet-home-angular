@@ -19,7 +19,13 @@ export class CheckboxComponent {
    * Checkbox id.
    */
   @Input()
-  public id;
+  public id: string;
+
+  /**
+   * Background color for active state.
+   */
+  @Input()
+  public activeColor;
 
   /**
    * On checkbox changed event emitter.
@@ -35,6 +41,20 @@ export class CheckboxComponent {
     const target = event.currentTarget as HTMLInputElement;
     const value = target.checked;
     this.checkboxChanged.emit(value);
+  }
+
+  /**
+   * Emits value of checkbox changed.
+   */
+  public getActiveClass(): string {
+    switch (this.activeColor) {
+      case 'gold':
+        return 'gold';
+      case 'black':
+        return 'black';
+      default:
+        return 'black';
+    }
   }
 
 }

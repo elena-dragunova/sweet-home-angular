@@ -13,7 +13,7 @@ import { CatalogFilteringService } from '../../services/catalog-filtering.servic
 })
 export class ColorFilterComponent implements OnInit {
   /**
-   * Filtering categories changed.
+   * Filtering colors changed.
    */
   @Output()
   public colorsChanged = new EventEmitter();
@@ -42,5 +42,14 @@ export class ColorFilterComponent implements OnInit {
    */
   public onColorsChange(value: boolean, index: number): void {
     this.catalogFilteringService.onColorsChange(index, value);
+  }
+
+  /**
+   * Tracking function.
+   * @param index Item index
+   * @param color Item name
+   */
+  public trackByColors(index: number, color: string): string {
+    return `${color}-${index}`;
   }
 }
